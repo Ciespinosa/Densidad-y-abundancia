@@ -1,0 +1,12 @@
+name: AbundanciaPobl
+title: AbundanciaPobl
+username:
+account: ecologiacivan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3008110
+bundleId: 5140796
+url: https://ecologiacivan.shinyapps.io/AbundanciaPobl/
+when: 1634266263.42218
+asMultiple: FALSE
+asStatic: FALSE
