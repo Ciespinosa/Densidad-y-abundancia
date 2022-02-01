@@ -99,7 +99,7 @@ segments(x0 = rep(0,6), y0=seq(0,500,100), x1 = rep(500,6), y1=seq(0,500,100))
 
 Ahora lo que haremos es calcular la densidad y la abundancia para cada una de las especies. Como no podremos usar los datos de censos realizaremos un muestreo.
 
-Usted puede muestrear las dos poblaciones y obtener el tamaño para cada especie en cada parcela de muestreo. Puede cambiar el tamaño de la parcela y la cantidad de parcelas que muestreará (número de muestras). Los datos de _Tamaño de parcela_ es el tamaño de cada lado en metros. Si se dan cuenta en la Figura 1 la zona de estudio es de 500 por 500 metros, 25 mil metros cuadrados.
+Usted puede muestrear las dos poblaciones y obtener el tamaño para cada especie en cada parcela de muestreo. Puede cambiar el tamaño de la parcela y la cantidad de parcelas que muestreará (número de muestras). Los datos de _Tamaño de parcela_ es el tamaño de cada lado en metros. Si se dan cuenta en la Figura 1 la zona de estudio es de 500 por 500 metros, 250 mil metros cuadrados.
 
 Lo primero que haremos es modificar la cantidad de muestras que se levantan. Si observan en el gráfico vez que usted modifica el número de muestras aparece aleatoriamente en el gráfico una cantidad de parcelas. Uno de los problemas de esto es que algunas de las parcelas caen en los sitios en los que no hay esta especie. Ahora podemos ver el número de individuos en cada parcela y para cada especie, vaya a la pestaña "_Tabla_" ahí podrá ver el número de individuos en cada parcela, ahora modifique el número de muestras y observe los datos. Responda las siguientes preguntas:
 
