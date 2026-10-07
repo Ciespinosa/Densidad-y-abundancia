@@ -5,9 +5,9 @@ account: ecologiacivan
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3008110
-bundleId: 3736711
+bundleId: 6513048
 url: https://ecologiacivan.shinyapps.io/AbundanciaPobl/
-when: 1602626659.12494
+when: 1668447918.1502
+lastSyncTime: 1668447918.1502
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: app.R

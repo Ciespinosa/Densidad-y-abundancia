@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carlos Iván Espinosa">
+<meta name="dcterms.date" content="2026-01-01">
+
+<title>Densidad y Abundancia</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Pop_densidad_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Pop_densidad_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Pop_densidad_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Pop_densidad_files/libs/quarto-html/popper.min.js"></script>
+<script src="Pop_densidad_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Pop_densidad_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Pop_densidad_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Pop_densidad_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Pop_densidad_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Pop_densidad_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Pop_densidad_files/libs/bootstrap/bootstrap-f5bf36316ca6a5dddcd99c40fa7d475f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a></li>
+  <li><a href="#test-diagnóstico" id="toc-test-diagnóstico" class="nav-link" data-scroll-target="#test-diagnóstico"><span class="header-section-number">2</span> Test diagnóstico</a></li>
+  <li><a href="#casos-de-estudio" id="toc-casos-de-estudio" class="nav-link" data-scroll-target="#casos-de-estudio"><span class="header-section-number">3</span> Casos de estudio</a>
+  <ul class="collapse">
+  <li><a href="#caso-1-comparación-de-poblaciones-de-dos-especies" id="toc-caso-1-comparación-de-poblaciones-de-dos-especies" class="nav-link" data-scroll-target="#caso-1-comparación-de-poblaciones-de-dos-especies"><span class="header-section-number">3.1</span> Caso 1: Comparación de poblaciones de dos especies</a></li>
+  <li><a href="#caso-2-comparación-de-la-misma-especie-bajo-dos-escenarios" id="toc-caso-2-comparación-de-la-misma-especie-bajo-dos-escenarios" class="nav-link" data-scroll-target="#caso-2-comparación-de-la-misma-especie-bajo-dos-escenarios"><span class="header-section-number">3.2</span> Caso 2: Comparación de la misma especie bajo dos escenarios</a></li>
+  </ul></li>
+  <li><a href="#test-sumativo" id="toc-test-sumativo" class="nav-link" data-scroll-target="#test-sumativo"><span class="header-section-number">4</span> Test sumativo</a></li>
+  <li><a href="#informe-del-trabajo" id="toc-informe-del-trabajo" class="nav-link" data-scroll-target="#informe-del-trabajo"><span class="header-section-number">5</span> Informe del trabajo</a>
+  <ul class="collapse">
+  <li><a href="#estructura-del-informe" id="toc-estructura-del-informe" class="nav-link" data-scroll-target="#estructura-del-informe"><span class="header-section-number">5.1</span> Estructura del informe</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Densidad y Abundancia</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carlos Iván Espinosa </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><br> <br> Para regresar a <strong>Ejercicios interactivos</strong> pulsa <a href="https://ciespinosa.github.io/Interactivo.html"><img src="push.png" class="img-fluid" alt="button"></a></td>
+</tr>
+</tbody>
+</table>
+<section id="introducción" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción</h1>
+<p>Una de las propiedades más importantes de una población es su tamaño, es decir, la cantidad de individuos que la población alcanza en un determinado sitio. Aunque esta propiedad es muy sencilla de comprender, como siempre en ecología, no es fácil de obtener en el campo.</p>
+<p>En el presente trabajo aclararemos cuatro conceptos fundamentales:</p>
+<ul>
+<li><strong>Abundancia total:</strong> cantidad total de individuos de una población. Se obtiene multiplicando la densidad por el área de distribución de la especie.</li>
+<li><strong>Abundancia relativa:</strong> proporción de individuos de una especie respecto al total de individuos muestreados. Permite comparar el tamaño de dos o más poblaciones bajo distintas condiciones.</li>
+<li><strong>Densidad absoluta:</strong> número de individuos por unidad de área (por ejemplo, árboles por hectárea, aves por metro cuadrado).</li>
+<li><strong>Densidad relativa:</strong> índice que relaciona el número de individuos con el esfuerzo de muestreo (por ejemplo, aves capturadas por metro de red de neblina).</li>
+</ul>
+<p>Dentro de la densidad absoluta distinguimos dos formas de cálculo:</p>
+<ul>
+<li><strong>Densidad bruta:</strong> número de individuos dividido para el área total del estudio.</li>
+<li><strong>Densidad ecológica:</strong> número de individuos dividido para el área que realmente ocupa la especie.</li>
+</ul>
+<p>Estos conceptos están planteados desde el punto de vista de la población. Obtener información a nivel de la población total implica poder realizar un censo; sin embargo, como sabemos, eso no es posible. Por eso, mucho de nuestro trabajo y nuestros argumentos implican trabajar con muestras.</p>
+</section>
+<section id="test-diagnóstico" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Test diagnóstico</h1>
+<p>Antes de iniciar el ejercicio, por favor completa el siguiente test diagnóstico. Tus respuestas nos ayudan a mejorar la aplicación y a conocer tus conocimientos previos.</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSccoqGMiSC9pIRhB2hWjBwbMc6EovT-8rhuVCtfjBasuVKHZA/viewform?embedded=true" target="_blank">👉 Abrir test diagnóstico</a></p>
+</section>
+<section id="casos-de-estudio" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Casos de estudio</h1>
+<p>A continuación presentamos dos casos de estudio. En el primero compararemos la abundancia y densidad entre dos especies. En el segundo compararemos una misma especie bajo dos condiciones distintas.</p>
+<section id="caso-1-comparación-de-poblaciones-de-dos-especies" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="caso-1-comparación-de-poblaciones-de-dos-especies"><span class="header-section-number">3.1</span> Caso 1: Comparación de poblaciones de dos especies</h2>
+<p>Vamos a comparar la densidad y abundancia de <em>Cedrela montana</em> y de <em>Cinchona officinalis</em>, dos especies que habitan los bosques montanos de Ecuador. Este ejercicio es hipotético y los datos no corresponden a datos reales.</p>
+<p>La primera especie, <em>Cedrela montana</em>, se desarrolla en las partes más altas. La segunda, <em>Cinchona officinalis</em>, se encuentra distribuida en las zonas más bajas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Pop_densidad_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ahora calcularemos la densidad y la abundancia para cada especie. Como no podremos usar los datos de censos, realizaremos un muestreo.</p>
+<p>Usted puede muestrear las dos poblaciones y obtener el tamaño para cada especie en cada parcela. Puede cambiar el tamaño de la parcela y la cantidad de parcelas muestreadas. El “Tamaño de parcela” es la longitud de cada lado, en metros. La zona de estudio es de 500 × 500 metros, es decir <strong>250.000 m²</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Ejercicio interactivo — Caso 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Accede al muestreo interactivo aquí (selecciona la pestaña “Caso 1”):</p>
+<p><a href="https://ciespinosa.shinyapps.io/AbundanciaPobl/" target="_blank"> 👉 Abrir app del Trabajo 1 </a></p>
+</div>
+</div>
+<p>Lo primero que haremos es modificar la cantidad de muestras. Cada vez que usted modifica el número de muestras, aparecen aleatoriamente en el gráfico las parcelas. Uno de los problemas es que algunas parcelas caen en sitios donde no hay individuos de la especie. Puede ver el número de individuos en cada parcela en la pestaña “Tabla”. Modifique el número de muestras y observe los datos. Responda:</p>
+<ul>
+<li>¿Cuál de las dos especies presenta un mayor número de parcelas con cero individuos?</li>
+<li>¿Qué nos dice eso sobre el patrón de distribución espacial de cada especie?</li>
+<li>¿Hay diferencias entre las especies en la variabilidad del número de individuos por parcela?</li>
+</ul>
+<p>Nuestro siguiente trabajo será calcular la abundancia de cada especie y su densidad, tanto bruta como ecológica. Usaremos dos metodologías:</p>
+<ol type="i">
+<li>15 parcelas de 50 metros de lado.</li>
+<li>10 parcelas de 100 metros de lado.</li>
+</ol>
+<p>Con cada método:</p>
+<ul>
+<li>Calcular la abundancia de cada especie. Recuerde que el área de distribución de cada especie está marcada en los gráficos.</li>
+<li>Calcular la densidad ecológica y bruta de cada especie.</li>
+<li>Usar la densidad bruta para calcular la abundancia tomando en cuenta los 250.000 m².</li>
+<li>Usar la densidad ecológica y la distribución real para calcular la abundancia.</li>
+</ul>
+<p>Responda:</p>
+<ul>
+<li>¿Cuál de las dos especies es más abundante?</li>
+<li>¿Cuál de las dos especies tiene una mayor densidad bruta?</li>
+<li>¿Cuál de las dos especies tiene una mayor densidad ecológica?</li>
+<li>¿La conclusión sobre cuál especie es más abundante cambia según uses densidad bruta o ecológica? Explica por qué.</li>
+<li>¿Existe diferencia entre la abundancia calculada con densidad bruta y con densidad ecológica?</li>
+</ul>
+<p>Espero que el ejercicio no haya sido complicado. Me gustaría ahora conocer algunas de sus apreciaciones sobre el ejercicio que acaban de realizar. ¿Cuáles cree que son las limitaciones de realizar estas evaluaciones en el campo? ¿Cree que realmente es posible calcular la abundancia en el campo? ¿Es factible calcular la densidad ecológica en el campo?</p>
+</section>
+<section id="caso-2-comparación-de-la-misma-especie-bajo-dos-escenarios" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="caso-2-comparación-de-la-misma-especie-bajo-dos-escenarios"><span class="header-section-number">3.2</span> Caso 2: Comparación de la misma especie bajo dos escenarios</h2>
+<p>En este ejemplo compararemos la abundancia de <em>Amazilia amazilia</em>, una especie de colibrí que se encuentra en zonas de bosque (en verde) y en zonas de cultivo (en gris). Este también es un caso hipotético.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Pop_densidad_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Vamos a calcular la abundancia en cada uno de los dos usos de suelo. En gris tenemos el área de cultivo, mientras que en verde tenemos el área de bosque. Usted podrá muestrear cada una de las localidades y definir si existen cambios en la abundancia.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Ejercicio interactivo — Caso 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Accede al muestreo interactivo aquí (selecciona la pestaña “Caso 2”):</p>
+<p><a href="https://ciespinosa.shinyapps.io/AbundanciaPobl/" target="_blank"> 👉 Abrir app del Trabajo 1 </a></p>
+</div>
+</div>
+<p>Seleccione “Número” para ver la numeración de cada cuadrante. Escoja un número donde quiera ubicar la parcela de observación, ponga ese número en “Parcela”. Esto le permitirá obtener el valor de abundancia en ese sitio. Recuerde qué uso de suelo está muestreando: Bosque (en verde) o Cultivo (en gris), y selecciónelo en “Uso de suelo”. La abundancia se mostrará a un lado del gráfico. Presione “Agregar muestra” para acumular los datos de cada parcela.</p>
+<p>Vamos a seleccionar cinco sitios para cada uso de suelo y anotar la cantidad de individuos en cada parcela. Construya una tabla de datos con los datos de abundancia y obtenga el valor de densidad para cada parcela. Nuestra parcela abarca un área de 5.625 m² (un cuadrado de 75 × 75 metros). Con los datos de abundancia por parcela, transforme estos datos en abundancia relativa: divida el valor de cada parcela para el total de individuos encontrados en el muestreo en las dos coberturas.</p>
+<p>Calcule el área para cada tipo de uso de suelo. La app calcula automáticamente el área de cada uso a partir de la máscara; puedes verificarla en la pestaña “Resumen”. Calcula la abundancia total para la especie en cultivos y en bosque usando la densidad media y el área de cada uso de suelo. La densidad media para cada uso de suelo debe ser obtenida como la suma de las densidades encontradas en cada parcela dividido para el total de parcelas.</p>
+<p>Los datos deberían tener la siguiente estructura:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Tabla 1. Ejemplo de tabla de datos. AbunBosque: abundancia en bosque; AbunCultivo: abundancia en cultivo; DenBosque: densidad en bosque; DenCultivo: densidad en cultivo; AbunBosRe: abundancia relativa en bosque; AbunCulRe: abundancia relativa en cultivo.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">AbunBosque</th>
+<th style="text-align: right;">AbunCultivo</th>
+<th style="text-align: right;">DenBosque</th>
+<th style="text-align: right;">DenCultivo</th>
+<th style="text-align: right;">AbunBosRe</th>
+<th style="text-align: right;">AbunCulRe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8.8</td>
+<td style="text-align: right;">7.1</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.45</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Con los datos calculados responda:</p>
+<ul>
+<li>¿En cuál de los dos usos de suelo <em>A. amazilia</em> se encuentra en mayor abundancia total?</li>
+<li>¿Es posible llegar a la misma conclusión usando los datos de abundancia y densidad de cada parcela?</li>
+<li>En un estudio real, ¿qué tan factible es obtener el dato de abundancia total?</li>
+<li>¿Cuáles son las limitaciones de usar la abundancia por parcela como una medida comparable entre sitios?</li>
+<li>¿Qué variación observas entre parcelas de un mismo uso de suelo? ¿Cómo podrías usar esa información en un análisis más riguroso?</li>
+</ul>
+</section>
+</section>
+<section id="test-sumativo" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Test sumativo</h1>
+<p>Una vez que hayas completado los dos casos, por favor responde el test sumativo. Tus respuestas nos ayudan a evaluar la utilidad del ejercicio y a mejorarlo.</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSccoqGMiSC9pIRhB2hWjBwbMc6EovT-8rhuVCtfjBasuVKHZA/viewform?embedded=true" target="_blank">👉 Abrir test sumativo</a></p>
+</section>
+<section id="informe-del-trabajo" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Informe del trabajo</h1>
+<p>Una vez que haya desarrollado este trabajo, debe construir un informe que contenga los datos levantados durante los ejercicios y las respuestas a las preguntas planteadas.</p>
+<section id="estructura-del-informe" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="estructura-del-informe"><span class="header-section-number">5.1</span> Estructura del informe</h2>
+<ol type="1">
+<li><strong>Introducción</strong> (1 párrafo): ¿por qué es importante medir abundancia y densidad en ecología?</li>
+<li><strong>Metodología</strong>: qué tamaño de parcela usó, cuántas muestras levantó, qué metodología aplicó en cada caso.</li>
+<li><strong>Resultados</strong>: tablas con abundancia, densidad bruta, densidad ecológica y abundancia relativa para cada especie y cada uso de suelo. Incluye el gráfico comparativo del Caso 2.</li>
+<li><strong>Discusión</strong>: responde las preguntas de reflexión y conecta con la lectura de propiedades de las poblaciones (tema 1.1). Menciona al menos una limitación práctica y una pregunta que te haya surgido.</li>
+<li><strong>Anexos</strong>: capturas de pantalla de la app donde se evidencie el trabajo realizado.</li>
+</ol>
+<p><strong>Extensión:</strong> 1–2 páginas.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

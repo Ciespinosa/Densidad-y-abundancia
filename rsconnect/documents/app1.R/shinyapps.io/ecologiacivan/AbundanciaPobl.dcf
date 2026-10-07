@@ -1,0 +1,13 @@
+name: AbundanciaPobl
+title: AbundanciaPobl
+username: ecologiacivan
+account: ecologiacivan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3008110
+bundleId: 12661196
+url: https://ecologiacivan.shinyapps.io/AbundanciaPobl/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|app2.R|Densidad y abundancia.docx|funtion.Sam.R|Trabajo-Shiny_files/figure-html/unnamed-chunk-2-1.png|Trabajo-Shiny_files/figure-html/unnamed-chunk-3-1.png|Trabajo-Shiny_files/figure-html/unnamed-chunk-4-1.png|Trabajo-Shiny_files/figure-html/unnamed-chunk-5-1.png|Trabajo Shiny.html|Trabajo Shiny.rmd|Trabajo Shiny_files
