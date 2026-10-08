@@ -1,7 +1,7 @@
 ---
 title: "Densidad y Abundancia"
 author: "Carlos Iván Espinosa"
-date: "2026"
+date: last-modified
 format:
   html:
     toc: true
@@ -104,6 +104,7 @@ Ahora calcularemos la densidad y la abundancia para cada especie. Como no podrem
 Usted puede muestrear las dos poblaciones y obtener el tamaño para cada especie en cada parcela. Puede cambiar el tamaño de la parcela y la cantidad de parcelas muestreadas. El "Tamaño de parcela" es la longitud de cada lado, en metros. La zona de estudio es de 500 × 500 metros, es decir **250.000 m²**.
 
 ::: {.callout-note}
+
 ## Ejercicio interactivo — Caso 1
 Accede al muestreo interactivo aquí (selecciona la pestaña "Caso 1"):
 
@@ -113,11 +114,7 @@ Accede al muestreo interactivo aquí (selecciona la pestaña "Caso 1"):
 
 :::
 
-Lo primero que haremos es modificar la cantidad de muestras. Cada vez que usted modifica el número de muestras, aparecen aleatoriamente en el gráfico las parcelas. Uno de los problemas es que algunas parcelas caen en sitios donde no hay individuos de la especie. Puede ver el número de individuos en cada parcela en la pestaña "Tabla". Modifique el número de muestras y observe los datos. Responda:
-
-- ¿Cuál de las dos especies presenta un mayor número de parcelas con cero individuos?
-- ¿Qué nos dice eso sobre el patrón de distribución espacial de cada especie?
-- ¿Hay diferencias entre las especies en la variabilidad del número de individuos por parcela?
+Lo primero que haremos es modificar la cantidad de muestras. Cada vez que usted modifica el número de muestras, aparecen aleatoriamente en el gráfico las parcelas. Uno de los problemas es que algunas parcelas caen en sitios donde no hay individuos de la especie. Puede ver el número de individuos en cada parcela en la pestaña "Tabla". Modifique el número de muestras y observe los datos. 
 
 Nuestro siguiente trabajo será calcular la abundancia de cada especie y su densidad, tanto bruta como ecológica. Usaremos dos metodologías:
 
@@ -131,15 +128,27 @@ Con cada método:
 - Usar la densidad bruta para calcular la abundancia tomando en cuenta los 250.000 m².
 - Usar la densidad ecológica y la distribución real para calcular la abundancia.
 
-Responda:
+::: {.callout-tip title="Preguntas caso 1"}
 
-- ¿Cuál de las dos especies es más abundante?
-- ¿Cuál de las dos especies tiene una mayor densidad bruta?
-- ¿Cuál de las dos especies tiene una mayor densidad ecológica?
-- ¿La conclusión sobre cuál especie es más abundante cambia según uses densidad bruta o ecológica? Explica por qué.
-- ¿Existe diferencia entre la abundancia calculada con densidad bruta y con densidad ecológica?
+**Mientras exploras la app:**
 
-Espero que el ejercicio no haya sido complicado. Me gustaría ahora conocer algunas de sus apreciaciones sobre el ejercicio que acaban de realizar. ¿Cuáles cree que son las limitaciones de realizar estas evaluaciones en el campo? ¿Cree que realmente es posible calcular la abundancia en el campo? ¿Es factible calcular la densidad ecológica en el campo?
+*P1 (Observación)*. ¿Qué especie tiene más parcelas con cero individuos? ¿Qué te sugiere eso sobre su patrón de distribución espacial?
+
+**Al calcular con dos estrategias:**
+
+*P2 (Cálculo)*. Compara las estimaciones obtenidas con parcelas de 50 m y con parcelas de 100 m. ¿Cuál de las dos estrategias da estimaciones más estables entre parcelas? ¿Por qué crees que ocurre?
+
+**Al comparar densidades:**
+
+*P3 (Interpretación)*. ¿Cuál de las dos especies tiene mayor densidad bruta? ¿Y mayor densidad ecológica? ¿La respuesta cambia según el tipo de densidad? Explica por qué.
+
+**Cierre conceptual:**
+
+*P4 (Cierre conceptual)*. ¿Cuáles cree que son las limitaciones de realizar estas evaluaciones en el campo? ¿Cree que realmente es posible calcular la abundancia en el campo? ¿Es factible calcular la densidad ecológica en el campo?
+
+:::
+
+Espero que el ejercicio no haya sido complicado. Ahora vamos a ir al segundo caso en el cual cambian un tanto las condiciones.
 
 ## Caso 2: Comparación de la misma especie bajo dos escenarios
 
@@ -211,11 +220,25 @@ kable(dtaAR, caption = "Tabla 1. Ejemplo de tabla de datos. AbunBosque: abundanc
 
 Con los datos calculados responda:
 
-- ¿En cuál de los dos usos de suelo *A. amazilia* se encuentra en mayor abundancia total?
-- ¿Es posible llegar a la misma conclusión usando los datos de abundancia y densidad de cada parcela?
-- En un estudio real, ¿qué tan factible es obtener el dato de abundancia total?
-- ¿Cuáles son las limitaciones de usar la abundancia por parcela como una medida comparable entre sitios?
-- ¿Qué variación observas entre parcelas de un mismo uso de suelo? ¿Cómo podrías usar esa información en un análisis más riguroso?
+::: {.callout-tip title="Preguntas caso 2"}
+
+**Mientras exploras la app:**
+
+*P1 (Observación)*. Muestrea 5 parcelas en bosque y 5 en cultivo. ¿En qué uso de suelo encuentras más variación entre parcelas? ¿Qué podría explicar esa variación?
+
+**Al calcular densidades y abundancias:**
+
+*P2 (Cálculo)*. Calcula la densidad media y la abundancia total para cada uso de suelo. ¿Llegan a la misma conclusión la densidad por parcela y la abundancia total? ¿Por qué puede haber diferencias?
+
+**Interpretación ecológica:**
+
+*P3 (Interpretación)*. ¿Qué implicaciones tendría para la conservación de A. amazilia si el bosque tuviera mayor densidad pero menor abundancia total que el cultivo? Piensa en qué medida es más relevante para la especie.
+
+**Cierre conceptual:**
+
+*P4 (Cierre conceptual)*. En un estudio real, ¿qué tan factible es obtener el dato de abundancia total? ¿Qué limitaciones tiene usar la abundancia por parcela como medida comparable entre sitios? ¿Cómo podrías usar la variación entre parcelas en un análisis más riguroso?
+
+:::
 
 # Test sumativo
 
@@ -223,16 +246,3 @@ Una vez que hayas completado los dos casos, por favor responde el test sumativo.
 
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSccoqGMiSC9pIRhB2hWjBwbMc6EovT-8rhuVCtfjBasuVKHZA/viewform?embedded=true" target="_blank">👉 Abrir test sumativo</a>
 
-# Informe del trabajo
-
-Una vez que haya desarrollado este trabajo, debe construir un informe que contenga los datos levantados durante los ejercicios y las respuestas a las preguntas planteadas.
-
-## Estructura del informe
-
-1. **Introducción** (1 párrafo): ¿por qué es importante medir abundancia y densidad en ecología?
-2. **Metodología**: qué tamaño de parcela usó, cuántas muestras levantó, qué metodología aplicó en cada caso.
-3. **Resultados**: tablas con abundancia, densidad bruta, densidad ecológica y abundancia relativa para cada especie y cada uso de suelo. Incluye el gráfico comparativo del Caso 2.
-4. **Discusión**: responde las preguntas de reflexión y conecta con la lectura de propiedades de las poblaciones (tema 1.1). Menciona al menos una limitación práctica y una pregunta que te haya surgido.
-5. **Anexos**: capturas de pantalla de la app donde se evidencie el trabajo realizado.
-
-**Extensión:** 1–2 páginas.
