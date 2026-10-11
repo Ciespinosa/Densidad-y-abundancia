@@ -108,7 +108,7 @@ Usted puede muestrear las dos poblaciones y obtener el tamaño para cada especie
 ## Ejercicio interactivo — Caso 1
 Accede al muestreo interactivo aquí (selecciona la pestaña "Caso 1"):
 
-<a href="https://ciespinosa.shinyapps.io/AbundanciaPobl/" target="_blank">
+<a href="https://ecologiacivan.shinyapps.io/AbundanciaPobl/" target="_blank">
   👉 Abrir app del Trabajo 1
 </a>
 
@@ -195,7 +195,7 @@ Vamos a calcular la abundancia en cada uno de los dos usos de suelo. En gris ten
 ## Ejercicio interactivo — Caso 2
 Accede al muestreo interactivo aquí (selecciona la pestaña "Caso 2"):
 
-<a href="https://ciespinosa.shinyapps.io/AbundanciaPobl/" target="_blank">
+<a href="https://ecologiacivan.shinyapps.io/AbundanciaPobl/" target="_blank">
   👉 Abrir app del Trabajo 1
 </a>
 :::
